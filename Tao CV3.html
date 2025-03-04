@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Nguyễn Hoàng Nguyên</title>
+    <style>
+        /* Tổng thể */
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        body {
+            margin: 0;
+            padding-top: 30px;
+            font-family: 'Arial', sans-serif;
+            background: #f0f0f5;
+            color: #333;
+        }
+        header {
+            height: 50vh;
+            margin-top: 30px;
+            background: url('cover.jpg') center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            color: white;
+        }
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+        header .content {
+            position: relative;
+            z-index: 2;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        header p {
+            font-size: 1.2em;
+            opacity: 0.8;
+        }
+        /* Card CV */
+        .cv-card {
+            max-width: 900px;
+            margin: -60px auto 20px;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+            top: 20px;
+            left: 90%;
+            transform: translateX(-50%);
+            border: 5px solid white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        h2.section-title {
+            border-bottom: 2px solid #4CAF50;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .section {
+            margin-bottom: 50px;
+        }
+        .section p, .section ul {
+            margin: 5px 0;
+        }
+        .skills span {
+            background: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-right: 5px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .contact {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .contact a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        /* Animation hover section */
+        .section:hover {
+            transform: translateX(5px);
+            transition: 0.3s;
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #4CAF50;
+            color: white;
+            margin-top: 30px;
+        }
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Parallax -->
+<header>
+    <div class="content">
+        <h1>Nguyễn Hoàng Nguyên</h1>
+        <p>Fullstack Developer | Passion for Tech & Innovation</p>
+    </div>
+</header>
+
+<!-- Card CV -->
+<div class="cv-card">
+
+    <img src="images.jpg" alt="Ảnh đại diện" class="avatar">
+
+    <div class="section">
+        <h2 class="section-title">Giới thiệu bản thân</h2>
+        <p>Lập trình viên trẻ, sáng tạo, luôn tận tâm với nghề và vô cùng yêu thích học hỏi những thứ mới.</p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Thông tin liên hệ</h2>
+        <div class="contact">
+            <p>Dân tộc : Kinh</p> <p>Nhóm máu : AB</p>
+            <p>Email: <a href="mailto:nguyenskt2004@gmail.com">nguyenskt2004@gmail.com</a></p>
+            <p>Điện thoại: 038-29-05-169</p>
+            <p>Địa chỉ: Chung cư GreenStar, 234 Phạm Văn Đồng, KĐTTPGL, Cổ Nhuế 2, Bắc Từ Liêm,Hà Nội</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Kỹ năng chuyên môn</h2>
+        <div class="skills">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>React</span>
+            <span>Node.js</span>
+            <span>MySQL</span>
+            <span>Microsoft Office</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Kinh nghiệm làm việc</h2>
+        <ul>
+        <li><p><strong>Công ty SunViet</strong> - (2023 - 2025)</p></li>
+        <ul>
+            <li>Quản lý chuỗi cung ứng hàng hóa logistic.</li>
+            <li>Quản lý dữ liệu và tối ưu hóa truy vấn MySQL.</li>
+        </ul>   </ul>
+        <ul>
+        <li><p><strong>Trung tâm tiếng anh RES</strong> -  (2022 - 2023)</p></li>
+        <ul>
+            <li>Xây dựng trang web quản trị.</li>
+            <li>Quản lý hệ thống mạng và phần mềm ở trung tâm.</li>
+        </ul>   </ul>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Học vấn</h2>
+        <ul>
+        <li><p>Học viện Công nghệ Bưu chính Viễn thông - CNTT (2022 - 2025)</p></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Chứng chỉ</h2>
+        <ul>
+            <li>Frontend Developer - FUNiX</li>
+            <li>Google Python Certificate</li>
+            <li>MOS(Microsoft Office Specialist)</li>
+            <li>IELTS - chứng chỉ ngoại ngữ tiếng anh</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Sở thích</h2>
+        <ul>
+            <li>Đi phượt, khám phá.</li>
+            <li>Đọc sách dưới ánh nắng.</li>
+            <li>Viết blog chia sẻ kiến thức IT.</li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    CV được thiết kế bởi <a href="#">Nguyễn Hoàng Nguyên</a> - © 2025
+</footer>
+
+</body>
+</html>
