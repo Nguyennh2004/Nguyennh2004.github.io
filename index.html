@@ -125,6 +125,51 @@
             color: white;
             text-decoration: underline;
         }
+        /* Thiết kế ô nhập nội dung */
+#contactForm input, #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+    background: #f9f9f9;
+}
+
+/* Hiệu ứng khi bấm vào */
+#contactForm input:focus, #contactForm textarea:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+    background: white;
+}
+
+/* Thiết kế riêng cho textarea */
+#contactForm textarea {
+    resize: none;
+    height: 120px;
+}
+
+/* Nút gửi tin nhắn */
+#submitBtn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#submitBtn:hover {
+    background: linear-gradient(45deg, #388E3C, #2E7D32);
+    transform: scale(1.05);
+}
+
     </style>
 </head>
 <body>
@@ -228,9 +273,9 @@
             <label for="message">Tin nhắn:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
             
-            <button type="submit">Gửi tin nhắn</button>
+            <button type="submit" id="submitBtn">Gửi tin nhắn</button>
         </form>
-        <p id="successMessage" style="display:none; color: green;">Tin nhắn đã được gửi thành công!</p>
+        <p id="successMessage" style="display:none; color: green; font-weight: bold; opacity: 0; transition: opacity 0.5s ease-in-out;">Tin nhắn đã được gửi thành công!</p>
     </div>
 </div>
 
@@ -241,16 +286,42 @@
         let name = document.getElementById("name").value.trim();
         let email = document.getElementById("email").value.trim();
         let message = document.getElementById("message").value.trim();
-        
+        let submitBtn = document.getElementById("submitBtn");
+        let successMessage = document.getElementById("successMessage");
+
+        // Kiểm tra email hợp lệ
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            alert("Vui lòng nhập email hợp lệ.");
+            return;
+        }
+
         if (name === "" || email === "" || message === "") {
             alert("Vui lòng điền đầy đủ thông tin.");
             return;
         }
         
-        document.getElementById("successMessage").style.display = "block";
-        document.getElementById("contactForm").reset();
+        // Hiệu ứng loading cho button
+        submitBtn.innerText = "Đang gửi...";
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+            successMessage.style.display = "block";
+            successMessage.style.opacity = "1"; // Hiện dần tin nhắn
+            submitBtn.innerText = "Gửi tin nhắn";
+            submitBtn.disabled = false;
+            document.getElementById("contactForm").reset();
+        }, 1500);
+        setTimeout(() => {
+    successMessage.style.opacity = "0"; 
+    setTimeout(() => {
+        successMessage.style.display = "none"; 
+    }, 500);
+}, 3000);
+
     });
 </script>
+
 
 
 <!-- Footer -->
